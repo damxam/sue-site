@@ -14,7 +14,7 @@
  *= require_self
  */
 
-*= require lightbox
+/**= require lightbox*/
 
 a{ text-decoration: none; }
 
