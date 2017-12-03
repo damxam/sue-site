@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+*= require lightbox
+
+a{ text-decoration: none; }
+
+
+
+div.gallery {
+	border-bottom: 1px solid #A5A5A5;
+	border-left: 1px solid #A5A5A5;
+	float:right;
+	width:300px;
+}
+
+div.secondary {
+	padding-top: 1px;
+	padding-bottom: 1px;	
+	background-color:#E6E6E6;
+	width:auto;
+	background:url('/top.jpg') repeat;
+	height:75px;
+}
+div.index {
+	background:#F6F6F6;
+	text-align:left;
+	float:center;
+	width:auto;
+	min-height:600px;
+}
+div.content_set {
+	border-top: 1px solid #A5A5A5;
+	border-bottom: 1px solid #A5A5A5;
+	border-left: 1px solid #A5A5A5;
+	text-align:left;
+	margin-left:160px;
+	min-width:780px;
+	min-height:600px;
+	background-color:rgba(202, 221, 224, 0.9);
+}
+div.content_av {
+	border-top: 1px solid #A5A5A5;
+	border-bottom: 1px solid #A5A5A5;
+	border-left: 1px solid #A5A5A5;
+	text-align:left;
+	margin-left:160px;
+	min-width:780px;
+	height:600px;
+	background:url('/MagicLantern.jpg') repeat;
+}
+div.container {
+	clear:left;
+	width: 150px;
+	float:left;
+	background:url('/side_nav.jpg') repeat;
+}
+div.projects {
+	text-align: center;
+	border: 1px solid #A5A5A5;
+	background-color: rgba(230, 230, 230, 0.6);
+	width: 150px;
+	height: 100%;
+	padding-bottom:5px;
+}
+
+div.page{
+	border:1px solid #A5A5A5;
+	width:1024px;
+	min-height:600px;
+	background-color:#E6E6E6;
+
+
+}
+div.box{
+	border:1px solid #A5A5A5;
+	background-color:white;
+	float:center;
+	width:600px;
+	height:auto;
+}
+
+div.sub{
+	text-align: center;
+	border: 1px solid #A5A5A5;
+	background-color: rgba(230, 230, 230, 0.6);
+	width: 150px;
+	height: 100%;
+	padding-bottom:5px;
+	float:bottom;
+}
+
+div.bar{
+	background-color:#F6F6F6;
+	height:80px;
+	text-align:center;
+} 
+
+div.pics{
+	left:0;
+	border-top: 1px solid #A5A5A5;
+	border-bottom: 1px solid #A5A5A5;
+	border-right: 1px solid #A5A5A5;
+	background-color: #EDEDED;
+	width: 300px;
+	height: 800;
+	padding-bottom:5px;
+}
+div.bottom {
+	clear:both;
+}

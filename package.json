@@ -1,0 +1,7 @@
+{
+  "name": "suesite",
+  "private": true,
+  "dependencies": {
+    "lightbox2": "^2.9.0"
+  }
+}

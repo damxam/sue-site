@@ -1,0 +1,67 @@
+
+<% content_for(:projects) do %>
+	<table>	
+		<% @page.projects.each do |project| %>
+			<div class="projects">
+			  <%= link_to project.Name, page_project_path(@page, project) %>
+			</div>
+		<% end %>
+	</table>
+<% end %>
+
+<% content_for(:photo) do %>
+		<% @page.projects.each do |project| %>
+			<% project.photo.each do |photo| %>
+	      		<%= link_to(image_tag(photo.small.url), page_project_path(@page, project)) %>
+			<% end %>
+		<% end %>
+<% end %>
+
+<body>
+	<div class="container">
+		<%= yield :projects %>
+	</div>
+	<% case @page.id %>
+	<% when 6 %>	
+		<div class= "content_av" >
+			<center>
+				<%= @page.Content %>
+				<%= yield :photo %>
+			</center>
+		</div>
+	<% when 7 %>	
+		<div class= "content_av" >
+			<center>
+				<%= @page.Content %>
+				<%= yield :photo %>
+			</center>
+		</div>
+	<% when 1 %>	
+		<div class= "content_set" >
+			<center>
+				<%= @page.Content.html_safe %>
+				<%= yield :photo %>
+			</center>
+		</div>
+	<%else %>
+		<div class= "content_set" >
+			<center>
+				<%= yield :photo %>
+			</center>
+		</div>
+	<%end%>
+</body>
+<footer>
+	<% if admin_signed_in? %>
+		<%= link_to 'Edit', edit_page_path(@page) %> |
+		<%= link_to 'New project', new_page_project_path(@page) %> |
+		<%= link_to 'Home', pages_path %>
+		<p>
+			You are logged in as <b><strong><%= current_admin.email %></strong></b><br>
+		</p>
+		<p>
+		  <%= link_to "Logout", destroy_admin_session_url,  method: :delete %>
+		</p>
+	<% end %>
+</footer>
+

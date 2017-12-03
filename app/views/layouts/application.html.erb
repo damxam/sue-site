@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Suesite</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<body>
+	<center>
+  	<div class="page">
+	    <div class="bar">
+					<title><%= (@page.nil? || @page.Name.nil?) ? "Home" : @page.Name %></title>
+					<div class="secondary">
+						<p><%= link_to 'SUE REES', root_path %></p>
+						<a href="/pages/3/">Set Design</a>
+						&nbsp
+						&nbsp
+						<a href="/pages/2/">Animation/Video</a> 
+						&nbsp
+						&nbsp
+						<a href="/pages/4">Dance</a> 
+						&nbsp
+						&nbsp
+						<a href="/pages/5">Installation</a>
+						&nbsp
+						&nbsp
+						<a href="/pages/6">Research</a> 
+						&nbsp
+						&nbsp
+						<a href="/pages/7">Bio</a>  
+						&nbsp
+						&nbsp
+						<a href="/pages/1">Contact Me</a> 
+						&nbsp
+						&nbsp
+						<a href="http://suerees.blogspot.com/">Blog</a> 
+
+	    		</div>
+			</div>
+	    <div>
+	      <div >
+	        <%= yield :layout %>
+	      </div>
+	    </div>
+	  </div>
+	</center>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>

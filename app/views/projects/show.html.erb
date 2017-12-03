@@ -1,0 +1,60 @@
+
+<p>
+  <strong>Page:</strong>
+  <%= @project.page.Name %>
+  <strong>Project:</strong>
+  <%= @project.Name %>
+
+</p>
+
+
+
+<% content_for(:projects) do %>
+	<table>	
+		<% @page.projects.each do |project| %>
+			<div class="projects">
+			  <%= link_to project.Name, page_project_path(@page, project) %>
+			</div>
+		<% end %>
+	</table>
+<% end %>
+
+<% content_for(:photo) do %>
+	<% if @project.photo? %>
+	    <% @project.photo.each do |photo| %>
+			<a href="<%= photo.url %>" rel="lightbox[roadtrip]"> <%= image_tag(photo.small.url) %></a>
+	    <% end %>
+	<% end %>
+<% end %>
+
+
+<body>
+	<div class="container">
+		<%= yield :projects %>	
+	</div>	
+	<div class="content_set">
+		<% if @project.photo.length > 0 %>
+			<div class=	"gallery">
+				<center>
+					<%= yield :photo %>
+				</center>
+			</div>
+		<% end %>
+		<br>
+		<%= @project.Content %>
+		</br>
+	</div>
+</body>
+
+<footer>
+	<% if admin_signed_in? %>
+		<%= link_to 'Edit', edit_page_project_path(@page, @project) %> |
+		<%= link_to 'Back ', page_projects_path(@page) %> |
+		<p>
+			You are logged in as <b><%=h current_admin.email %></b><br>
+		</p>
+		<p>
+		  <%= link_to "Logout", destroy_admin_session_url,  method: :delete  %>
+		</p>
+	<% end %>
+</footer>

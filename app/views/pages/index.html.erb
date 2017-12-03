@@ -1,0 +1,30 @@
+
+
+<% content_for(:photo) do %>
+	<% @pages.each do |page| %>
+		<% page.projects.each do |project| %>
+			<% x = project.photo.sample %>
+      		<%= link_to image_tag(x.small.url), page_project_path(page, project) %>
+		<% end%>
+	<% end %>
+<% end %>
+
+<body>
+	<div class="index">
+		<center>
+			<%= yield :photo %>
+		</center>
+	</div>
+</body>
+
+
+<footer class="bottom">
+	<% if admin_signed_in? %>
+		<p>
+			You are logged in as <b><strong><%= current_admin.email %></strong></b><br>
+		</p>
+		<p>
+		  <%= link_to "Logout", destroy_admin_session_url,  method: :delete %>
+		</p>
+	<% end %>
+</footer>

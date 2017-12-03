@@ -1,0 +1,16 @@
+
+	<h1>Projects</h1>
+
+		<table>	
+			<% @page.projects.each do |project| %>
+				<div class="projects">
+				  <%= link_to project.Name, page_project_path(@page, project) %>
+				</div>
+			<% end %>
+		</table>
+
+
+	<br />
+<footer>
+	<%= link_to 'Home', root_path %>
+</footer>
